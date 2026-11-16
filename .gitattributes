@@ -1,0 +1,13 @@
+# Normalise line endings in the repository to LF.
+#
+# Without this, a Windows checkout commits CRLF and the same file then differs
+# between contributors on different platforms. The shell snippets in the README
+# and any future scripts also break outright if they reach a Unix shell with
+# CRLF endings.
+* text=auto eol=lf
+
+*.py   text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.html text eol=lf
+*.json text eol=lf

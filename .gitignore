@@ -1,0 +1,24 @@
+# Generated output. The page is a build artefact -- regenerate it with run.py.
+newsfeed.html
+*.json
+!package.json
+
+# Local database: holds the last 30 days of fetched articles.
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

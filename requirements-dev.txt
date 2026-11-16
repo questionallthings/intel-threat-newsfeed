@@ -1,0 +1,2 @@
+# Test dependencies only. The tool itself needs none of this.
+pytest>=8.0

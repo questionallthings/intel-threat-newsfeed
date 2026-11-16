@@ -1,0 +1,6 @@
+# Nothing here is required to run the tool: defusedxml is vendored in vendor/
+# and newsfeed/__init__.py falls back to it automatically.
+#
+# Installing it anyway is encouraged -- a pip-installed copy takes precedence
+# over the bundled one and will be newer. See vendor/README.md.
+defusedxml>=0.7.1
