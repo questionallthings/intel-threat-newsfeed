@@ -49,6 +49,13 @@ something.
 Fourteen feeds across three tiers — government and national CERTs, vendor and
 community research, and independent journalism.
 
+**[newsfeed-list.txt](newsfeed-list.txt)** in this folder lists every source
+with its website and feed URL, in plain text. It is generated from
+`newsfeed/sources.py`, so it cannot drift — a test fails if it is stale.
+Regenerate with `python3 run.py --write-list`.
+
+Or from the command line:
+
 ```bash
 python3 run.py --list-sources
 ```
@@ -113,6 +120,7 @@ python3 run.py --help
 | `--no-fetch` | Rebuild the page from the database without touching the network. |
 | `--source ID` | Poll one feed only, for debugging. |
 | `--list-sources` | Show the source ids. |
+| `--write-list` | Regenerate `newsfeed-list.txt` from `sources.py`. |
 | `--out PATH` | Write the HTML somewhere else. |
 | `--db PATH` | Use a different database location. |
 | `--json PATH` | Also write the raw feed document, for piping into other tooling. |

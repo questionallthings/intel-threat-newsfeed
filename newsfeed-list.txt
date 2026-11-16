@@ -1,0 +1,92 @@
+THREAT INTELLIGENCE NEWSFEED - SOURCE LIST
+==========================================
+
+The 14 sources this tool aggregates, with the site to visit and the feed it
+reads. Ids are what `--source` takes, for polling one feed at a time.
+
+Generated from newsfeed/sources.py. Do not edit by hand -- run:
+
+    python3 run.py --write-list
+
+Licence basis, robots.txt position and full-text status for each source are
+recorded in docs/SOURCES.md. Nothing is fetched that is not documented there.
+
+ 1. CISA Advisories
+    Website  https://www.cisa.gov/cybersecurity-advisories
+    Feed     https://www.cisa.gov/cybersecurity-advisories/all.xml
+    Id       cisa
+
+ 2. NCSC UK
+    Website  https://www.ncsc.gov.uk/
+    Feed     https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml
+    Id       ncsc-uk
+
+ 3. Canadian Centre for Cyber Security
+    Website  https://www.cyber.gc.ca/en/alerts-advisories
+    Feed     https://www.cyber.gc.ca/webservice/en/rss/alerts
+    Id       cccs
+
+ 4. Unit 42
+    Website  https://unit42.paloaltonetworks.com/
+    Feed     https://unit42.paloaltonetworks.com/feed/
+    Id       unit42
+
+ 5. Cisco Talos
+    Website  https://blog.talosintelligence.com/
+    Feed     https://blog.talosintelligence.com/rss/
+    Id       talos   (ships full article text; excerpts are truncated)
+
+ 6. SANS Internet Storm Center
+    Website  https://isc.sans.edu/
+    Feed     https://isc.sans.edu/rssfeed_full.xml
+    Id       sans-isc   (ships full article text; excerpts are truncated)
+
+ 7. SOCRadar
+    Website  https://socradar.io/blog/
+    Feed     https://socradar.io/feed/
+    Id       socradar   (ships full article text; excerpts are truncated)
+
+ 8. Google Threat Intelligence
+    Website  https://cloud.google.com/blog/topics/threat-intelligence
+    Feed     https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v
+    Id       google-ti
+
+ 9. Krebs on Security
+    Website  https://krebsonsecurity.com/
+    Feed     https://krebsonsecurity.com/feed/
+    Id       krebs   (ships full article text; excerpts are truncated)
+
+10. BleepingComputer
+    Website  https://www.bleepingcomputer.com/
+    Feed     https://www.bleepingcomputer.com/feed/
+    Id       bleepingcomputer
+
+11. The Hacker News
+    Website  https://thehackernews.com/
+    Feed     https://thehackernews.com/feeds/posts/default
+    Id       thehackernews
+
+12. Dark Reading
+    Website  https://www.darkreading.com/
+    Feed     https://www.darkreading.com/rss.xml
+    Id       darkreading
+
+13. Help Net Security
+    Website  https://www.helpnetsecurity.com/
+    Feed     https://www.helpnetsecurity.com/feed/
+    Id       helpnetsecurity
+
+14. Dark Web Informer
+    Website  https://darkwebinformer.com/
+    Feed     https://darkwebinformer.com/rss/
+    Id       darkwebinformer   (ships full article text; excerpts are truncated)
+
+
+RETENTION
+---------
+
+Headline, publisher, publication date, link and a ~300 character excerpt only.
+Full article text is never stored, even where a feed provides it. Everything is
+deleted after 30 days, measured from an article's publication date.
+
+Content remains the copyright of the publisher. This tool links to the original.

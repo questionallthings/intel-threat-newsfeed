@@ -18,6 +18,8 @@ from . import __version__
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_DB = ROOT / "data" / "newsfeed.db"
 DEFAULT_OUT = ROOT / "newsfeed.html"
+# At the repository root rather than in docs/, so it is easy to find.
+DEFAULT_LIST = ROOT / "newsfeed-list.txt"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -61,6 +63,11 @@ def main(argv: list[str] | None = None) -> int:
         help="list the source ids and exit",
     )
     parser.add_argument(
+        "--write-list",
+        action="store_true",
+        help="regenerate newsfeed-list.txt from sources.py and exit",
+    )
+    parser.add_argument(
         "--no-fetch",
         action="store_true",
         help="skip the network entirely and rebuild the page from the database",
@@ -97,6 +104,13 @@ def main(argv: list[str] | None = None) -> int:
         for source in SOURCES:
             full = " (full text)" if source.full_text_feed else ""
             print(f"  {source.id:<{width}}  {source.name}{full}")
+        return 0
+
+    if args.write_list:
+        from . import listing
+
+        path = listing.write_listing(DEFAULT_LIST)
+        print(f"  Wrote {path} ({len(SOURCES)} sources)")
         return 0
 
     def say(message: str = "") -> None:
